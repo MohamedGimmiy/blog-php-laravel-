@@ -4,13 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
 
+    protected $limit = 3;
     public function index()
     {
-        $posts = Post::all();
-        return view('blog\index', compact('posts'));
+        //DB::enableQueryLog();
+        $posts = Post::with('author')->latestFirst()->simplePaginate($this->limit);
+        return view('blog\index', compact('posts'));//->render();
+        //dd(DB::getQueryLog());
     }
 }
