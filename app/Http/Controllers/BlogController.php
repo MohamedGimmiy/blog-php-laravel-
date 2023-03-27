@@ -15,9 +15,15 @@ class BlogController extends Controller
         //DB::enableQueryLog();
         $posts = Post::with('author')
         ->latestFirst()
-        ->published()
+        //->published()
         ->paginate($this->limit);
         return view('blog\index', compact('posts'));//->render();
         //dd(DB::getQueryLog());
+    }
+
+    public function show($id)
+    {
+        $post = Post::findOrFail($id);
+    return view('blog\show',compact('post'));
     }
 }
