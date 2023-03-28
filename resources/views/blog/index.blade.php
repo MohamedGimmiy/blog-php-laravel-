@@ -15,7 +15,7 @@
                         @endif
                         <div class="post-item-body">
                             <div class="padding-10">
-                                <h2><a href="{{ route('blog.show', $post->id) }}">{{ $post->title }}</a></h2>
+                                <h2><a href="{{ route('blog.show', $post) }}">{{ $post->title }}</a></h2>
                                 <p>{{ $post->excerpt }}</p>
                             </div>
 

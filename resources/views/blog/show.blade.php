@@ -14,7 +14,6 @@
                     <div class="post-item-body">
                         <div class="padding-10">
                             <h1>{{ $post->title }}</h1>
-
                             <div class="post-meta no-border">
                                 <ul class="post-meta-group">
                                     <li><i class="fa fa-user"></i><a href="#"> {{ $post->author->name }}</a></li>

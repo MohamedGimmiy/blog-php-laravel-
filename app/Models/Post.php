@@ -10,6 +10,14 @@ class Post extends Model
 {
     use HasFactory;
     protected $dates = ['published_at'];
+
+    public function getRouteKeyName(){
+        return 'slug';
+    }
+
+    public function getRouteKey(){
+        return $this->slug;
+    }
     public function author()
     {
         return $this->belongsTo(User::class);
