@@ -28,6 +28,7 @@ class PostsTableSeeder extends Seeder
                 'body' => fake()->paragraph(rand(10,15), true),
                 'slug' => fake()->slug(),
                 'image' => rand(0,1) == 1? $image : null,
+                'category_id' => rand(1,5),
                 'created_at' => $pub,
                 'updated_at' => $pub,
                 'published_at' => rand(0,1) == 0? null :$date->addDays($i + rand(4,10))
